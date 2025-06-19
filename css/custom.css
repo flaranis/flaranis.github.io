@@ -3,3 +3,17 @@
     display: block !important;
 }
   
+/* 让主页文章卡片变成圆角长方形，缩小卡片宽度，增加间距 */
+.posts-expand .post-block {
+  border-radius: 18px !important;
+  margin: 24px auto !important;
+  max-width: 700px !important;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+  padding: 20px 28px !important;
+}
+
+/* 让卡片之间有更明显的分隔 */
+.posts-expand .post-block + .post-block {
+  margin-top: 32px !important;
+}
+  
