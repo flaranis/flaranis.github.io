@@ -33,9 +33,3 @@ body .content-wrap {
   padding: 0 !important;
 }
 
-/* 所有页面都显示背景图 */
-body {
-  background: url('/bg.png') no-repeat center center fixed !important;
-  background-size: cover !important;
-}
-  
