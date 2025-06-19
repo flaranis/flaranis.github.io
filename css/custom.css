@@ -4,16 +4,38 @@
 }
   
 /* 让主页文章卡片变成圆角长方形，缩小卡片宽度，增加间距 */
-.posts-expand .post-block {
+body .posts-expand .post-block {
   border-radius: 18px !important;
   margin: 24px auto !important;
   max-width: 700px !important;
-  box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+  box-shadow: 0 2px 16px rgba(0,0,0,0.06) !important;
   padding: 20px 28px !important;
+  overflow: hidden !important;
+  background: #fff !important;
+  color: #222 !important;
+}
+body .posts-expand .post-block * {
+  border-radius: 0 !important;
+}
+body .posts-expand .post-block {
+  border-radius: 18px !important;
 }
 
 /* 让卡片之间有更明显的分隔 */
-.posts-expand .post-block + .post-block {
+body .posts-expand .post-block + .post-block {
   margin-top: 32px !important;
+}
+
+/* 移除主页大白色背景 */
+body .content-wrap {
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+/* 所有页面都显示背景图 */
+body {
+  background: url('/bg.png') no-repeat center center fixed !important;
+  background-size: cover !important;
 }
   
