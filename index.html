@@ -178,7 +178,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/calculate/" class="post-title-link" itemprop="url">calculate</a>
+            <a href="/calculate/" class="post-title-link" itemprop="url">心得</a>
         </h2>
 
         <div class="post-meta">
@@ -189,7 +189,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2025-08-20 01:35:35 / Modified: 02:52:34" itemprop="dateCreated datePublished" datetime="2025-08-20T01:35:35+08:00">2025-08-20</time>
+              <time title="Created: 2025-08-20 01:35:35 / Modified: 04:07:38" itemprop="dateCreated datePublished" datetime="2025-08-20T01:35:35+08:00">2025-08-20</time>
             </span>
 
           
@@ -203,18 +203,33 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>这里是一些数学公式的例子。</p>
-<h3 id="二次方程求根公式">二次方程求根公式</h3>
-<p>对于一元二次方程 $ax^2 + bx + c = 0$ (其中 $a \neq 0$), 它的两个根是:</p>
-<p>$<br>
-x = \frac{-b \pm \sqrt{b^2-4ac}}{2a}<br>
-$</p>
-<h3 id="质能方程">质能方程</h3>
-<p>爱因斯坦著名的质能方程:</p>
-<p>$$E=mc^2$$</p>
-<h3 id="欧拉恒等式">欧拉恒等式</h3>
-<p>被誉为数学中最美的公式之一的欧拉恒等式:</p>
-<p>$$e^{i\pi} + 1 = 0$$</p>
+          <p>随想</p>
+
+$$
+\begin{aligned}
+% --- 在此处定义一个全局宏命令 \ud 代表正体的 d ---
+\newcommand{\ud}{\mathrm{d}}
+\iint_R f(x,y)\,\ud x\,\ud y &= \iint_S f(aR\cos(\theta),bR\sin(\theta))\left|\frac{\partial(x,y)}{\partial(R,\theta)}\right|\,\ud R\,\ud \theta \\
+&= \iint_S f(aR\cos(\theta),bR\sin(\theta))\left| \begin{vmatrix} \frac{\partial x}{\partial R} & \frac{\partial x}{\partial \theta} \\ \frac{\partial y}{\partial R} & \frac{\partial y}{\partial \theta} \end{vmatrix} \right|\,\ud R\,\ud \theta \\
+&= \iint_S f(aR\cos(\theta),bR\sin(\theta))\left| \begin{vmatrix} a\cos(\theta) & -aR\sin(\theta) \\ b\sin(\theta) & bR\cos(\theta) \end{vmatrix} \right|\,\ud R\,\ud \theta \\
+&= \iint_S f(aR\cos(\theta),bR\sin(\theta))\left| (a\cos(\theta))(bR\cos(\theta)) - (-aR\sin(\theta))(b\sin(\theta)) \right|\,\ud R\,\ud \theta \\
+&= \iint_S f(aR\cos(\theta),bR\sin(\theta))\left| abR\cos^2(\theta) + abR\sin^2(\theta) \right|\,\ud R\,\ud \theta \\
+&= \iint_S f(aR\cos(\theta),bR\sin(\theta))\left| abR(\cos^2(\theta) + \sin^2(\theta)) \right|\,\ud R\,\ud \theta \\
+&= \iint_S f(aR\cos(\theta),bR\sin(\theta)) abR \, \ud R\,\ud \theta \quad (\text{假设 } a,b,R \ge 0)
+\end{aligned}
+$$
+
+<p>这里可以理解为坐标轴改变，即假设以($\theta,R$)为新坐标轴，原先的$x,y$就变成了$\partial x,\partial y$的新坐标，新的面积即为他们的叉乘（即二阶行列式）</p>
+<hr>
+<p>当函数$f(x)$满足$\forall a\leq x \leq b,f(x)=f(a+b-x)$(即积分区间内函数对称)时，有</p>
+
+$$
+\begin{aligned}
+\int_a^b xf(x)\,\ud x &=\int_a^b(a+b-x)f(x)\,\ud x\\
+&=\frac{a+b}{2}\int_a^b f(x)\,\ud x \\[1.5em]
+\text{e.g.} \quad \int_{0}^{\pi} x\sin(x)\,\ud x &=\frac{\pi}{2}\int_{0}^\pi \sin(x)\,\ud x
+\end{aligned}
+$$
 
       
     </div>
@@ -404,7 +419,7 @@ $</p>
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2025-08-17 21:50:57" itemprop="dateModified" datetime="2025-08-17T21:50:57+08:00">2025-08-17</time>
+                <time title="Modified: 2025-08-20 03:54:18" itemprop="dateModified" datetime="2025-08-20T03:54:18+08:00">2025-08-20</time>
               </span>
 
           
@@ -964,6 +979,10 @@ $$<br>
           <span class="site-state-item-count">10</span>
           <span class="site-state-item-name">posts</span>
         </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">tags</span>
       </div>
   </nav>
 </div>
