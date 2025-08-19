@@ -1,35 +1,27 @@
-.katex {
-    text-align: left !important;
-    display: block !important;
-}
-  
-/* 让主页文章卡片变成圆角长方形，缩小卡片宽度，增加间距 */
-body .posts-expand .post-block {
-  border-radius: 18px !important;
-  margin: 24px auto !important;
-  max-width: 700px !important;
-  box-shadow: 0 2px 16px rgba(0,0,0,0.06) !important;
-  padding: 20px 28px !important;
-  overflow: hidden !important;
-  background: #fff !important;
-  color: #222 !important;
-}
-body .posts-expand .post-block * {
-  border-radius: 0 !important;
-}
-body .posts-expand .post-block {
-  border-radius: 18px !important;
+/* KaTeX Display Fix */
+.katex-display {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.75em 0;
 }
 
-/* 让卡片之间有更明显的分隔 */
-body .posts-expand .post-block + .post-block {
-  margin-top: 32px !important;
+/* KaTeX Font Size & Style Fix */
+.katex, .katex .text-monospace {
+  font-size: 1.1em !important;
+  font-family: 'KaTeX_Main', 'Times New Roman', serif !important;
+  font-weight: normal !important;
 }
 
-/* 移除主页大白色背景 */
-body .content-wrap {
-  background: transparent !important;
-  box-shadow: none !important;
-  padding: 0 !important;
+/* KaTeX Fraction Line Fix */
+.katex .frac-line {
+  border-bottom-color: #000 !important;
+  border-bottom-style: solid !important;
+  border-bottom-width: 1px !important;
 }
 
+/* General KaTeX alignment and spacing */
+.katex, .katex-display {
+    line-height: 1.6em !important;
+    text-align: initial !important;
+    text-indent: 0 !important;
+}
