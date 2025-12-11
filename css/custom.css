@@ -1,27 +1,292 @@
 /* KaTeX Display Fix */
 .katex-display {
-  overflow-x: auto;
-  overflow-y: hidden;
-  padding: 0.75em 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 0.75em 0;
 }
 
 /* KaTeX Font Size & Style Fix */
-.katex, .katex .text-monospace {
-  font-size: 1.1em !important;
-  font-family: 'KaTeX_Main', 'Times New Roman', serif !important;
-  font-weight: normal !important;
+.katex,
+.katex .text-monospace {
+    font-size: 1.1em !important;
+    font-family: 'KaTeX_Main', 'Times New Roman', serif !important;
+    font-weight: normal !important;
 }
 
 /* KaTeX Fraction Line Fix */
 .katex .frac-line {
-  border-bottom-color: #000 !important;
-  border-bottom-style: solid !important;
-  border-bottom-width: 1px !important;
+    border-bottom-color: #000 !important;
+    border-bottom-style: solid !important;
+    border-bottom-width: 1px !important;
 }
 
 /* General KaTeX alignment and spacing */
-.katex, .katex-display {
+.katex,
+.katex-display {
     line-height: 1.6em !important;
     text-align: initial !important;
     text-indent: 0 !important;
+}
+
+/* ==========================================================================
+   Modern Blog Beautification (Pisces Scheme - Final Polish V3)
+   ========================================================================== */
+
+/* IMPORT FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Lato:wght@400;700&display=swap');
+
+/* 1. Global Background & Selection & Scrollbar */
+body {
+    padding-left: 0 !important;
+    box-sizing: border-box;
+    /* User request: Background brightness callback 3% (0.03) */
+    background: linear-gradient(rgba(0, 0, 0, 0.03), rgba(0, 0, 0, 0.03)), url('/images/background.jpeg') no-repeat center center fixed !important;
+    background-size: cover !important;
+    color: #444;
+    font-family: 'Lato', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+}
+
+/* Custom Scrollbar - Slim & Elegant */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.4);
+}
+
+/* Text Selection Color */
+::selection {
+    background: #FFD700;
+    /* Gold */
+    color: #333;
+}
+
+.headband {
+    display: none !important;
+}
+
+/* 2. Layout Adjustment */
+
+@media (min-width: 992px) {
+
+    /* SIDEBAR FIXED LEFT - NARROWER (210px) */
+    .sidebar {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        bottom: 0 !important;
+        width: 210px !important;
+        height: 100vh !important;
+        background: rgba(255, 255, 255, 0.85) !important;
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        box-shadow: 4px 0 15px rgba(0, 0, 0, 0.05);
+        z-index: 1000 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        display: block !important;
+        border-radius: 0 !important;
+    }
+
+    /* MAIN CONTENT */
+    .main-inner {
+        position: relative !important;
+        margin-left: 220px !important;
+        margin-right: 12% !important;
+        width: auto !important;
+        max-width: none !important;
+        padding-left: 0 !important;
+        padding-top: 20px !important;
+    }
+
+    /* Header Inner (Menu) - Narrower */
+    .header-inner {
+        position: fixed !important;
+        top: 220px !important;
+        left: 0 !important;
+        width: 210px !important;
+        background: transparent !important;
+        box-shadow: none !important;
+        padding: 0 15px !important;
+        z-index: 1001 !important;
+        border: none !important;
+    }
+
+    /* Sidebar Inner (Avatar) */
+    .sidebar-inner {
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: auto !important;
+        background: transparent !important;
+        box-shadow: none !important;
+        padding: 30px 0 0 0 !important;
+        margin: 0 !important;
+        z-index: 1002 !important;
+    }
+
+    .sidebar-toggle {
+        display: none !important;
+    }
+}
+
+/* HIDE Brand/Title */
+.site-brand-container {
+    background: transparent !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.site-title,
+.site-subtitle,
+.brand,
+.site-meta {
+    display: none !important;
+}
+
+.site-state {
+    display: none !important;
+}
+
+/* 3. Content Styling */
+.content-wrap {
+    background: transparent !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+}
+
+.post-block {
+    /* 60% Opacity */
+    background: rgba(255, 255, 255, 0.6) !important;
+    border-radius: 16px !important;
+    box-shadow:
+        0 4px 6px -1px rgba(0, 0, 0, 0.05),
+        0 10px 15px -3px rgba(0, 0, 0, 0.05),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.4) !important;
+
+    padding: 45px !important;
+    margin-bottom: 30px !important;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+.post-block:hover {
+    transform: translateY(-4px);
+    box-shadow:
+        0 20px 25px -5px rgba(0, 0, 0, 0.1),
+        0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
+    background: rgba(255, 255, 255, 0.65) !important;
+}
+
+/* 4. Menu & Avatar Styling */
+.site-author-image {
+    width: 110px !important;
+    height: 110px !important;
+    border: 3px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 50% !important;
+    transition: transform 0.6s ease-in-out;
+    display: block !important;
+    margin: 0 auto 5px auto !important;
+    opacity: 1 !important;
+}
+
+.site-author-image:hover {
+    transform: rotate(360deg) scale(1.05);
+}
+
+/* ID Font Size Increase & ARTISTIC FONT */
+.site-author-name {
+    margin: 10px 0 0 0 !important;
+    color: #222;
+    text-align: center;
+    letter-spacing: 2px;
+    font-size: 24px !important;
+    /* Elegant size */
+    font-family: 'Cinzel Decorative', 'Times New Roman', serif !important;
+    /* Greek/Roman style with serifs */
+    font-weight: 550 !important;
+    /* Fine-tuned weight */
+    font-style: italic !important;
+    /* Italic for elegance */
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+/* Menu items - Reduced Spacing */
+.menu {
+    text-align: left !important;
+    margin-top: 5px;
+    padding: 0 !important;
+    margin-left: 45px !important;
+}
+
+.menu-item {
+    display: block !important;
+    margin: 4px 0 !important;
+}
+
+.menu-item a {
+    background: transparent !important;
+    border-radius: 8px;
+    padding: 6px 12px !important;
+    display: block !important;
+    text-decoration: none !important;
+    transition: all 0.3s ease;
+    color: #555 !important;
+    font-size: 14px;
+    /* Finer text */
+    font-weight: 400;
+    text-align: left !important;
+    padding-left: 0 !important;
+    position: relative;
+    font-family: 'Lato', sans-serif !important;
+    /* Keep menu readable */
+}
+
+.menu-item a:hover {
+    background: rgba(0, 0, 0, 0.05) !important;
+    color: #2F80ED !important;
+    transform: translateX(8px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
+}
+
+/* 5. Mobile Responsive */
+@media (max-width: 991px) {
+    body {
+        padding-left: 0 !important;
+    }
+
+    .main-inner {
+        margin: 0 auto !important;
+        width: 94% !important;
+        margin-right: auto !important;
+    }
+
+    .header-inner {
+        position: relative !important;
+        width: 100% !important;
+        top: auto;
+        left: auto;
+        background: #fff !important;
+    }
+
+    .sidebar {
+        display: none !important;
+    }
+
+    .site-state {
+        display: none !important;
+    }
 }
