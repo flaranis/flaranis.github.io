@@ -168,26 +168,33 @@ body {
 }
 
 .post-block {
-    /* 60% Opacity */
-    background: rgba(255, 255, 255, 0.6) !important;
+    /* 45% Opacity */
+    background: rgba(255, 255, 255, 0.45) !important;
     border-radius: 16px !important;
     box-shadow:
         0 4px 6px -1px rgba(0, 0, 0, 0.05),
         0 10px 15px -3px rgba(0, 0, 0, 0.05),
-        inset 0 0 0 1px rgba(255, 255, 255, 0.4) !important;
+        /* Enhanced Glass Border: Brighter top/left */
+        inset 1px 1px 0 0 rgba(255, 255, 255, 0.7),
+        inset -1px -1px 0 0 rgba(255, 255, 255, 0.3) !important;
 
     padding: 45px !important;
     margin-bottom: 30px !important;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    backdrop-filter: blur(10px);
+    border: none !important;
+    /* Rely on inset shadow */
+    backdrop-filter: blur(12px);
+    /* Reduced to 12px */
+    -webkit-backdrop-filter: blur(12px);
 }
 
 .post-block:hover {
     transform: translateY(-4px);
     box-shadow:
         0 20px 25px -5px rgba(0, 0, 0, 0.1),
-        0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
-    background: rgba(255, 255, 255, 0.65) !important;
+        0 10px 10px -5px rgba(0, 0, 0, 0.04),
+        inset 1px 1px 0 0 rgba(255, 255, 255, 0.8),
+        inset -1px -1px 0 0 rgba(255, 255, 255, 0.4) !important;
+    background: rgba(255, 255, 255, 0.55) !important;
 }
 
 /* 4. Menu & Avatar Styling */
@@ -217,24 +224,26 @@ body {
     /* Elegant size */
     font-family: 'Cinzel Decorative', 'Times New Roman', serif !important;
     /* Greek/Roman style with serifs */
-    font-weight: 550 !important;
-    /* Fine-tuned weight */
+    font-weight: 400 !important;
+    /* Finer weight */
     font-style: italic !important;
     /* Italic for elegance */
     text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
 }
 
-/* Menu items - Reduced Spacing */
+/* Menu items - Slightly Relaxed Spacing */
 .menu {
     text-align: left !important;
-    margin-top: 5px;
+    margin-top: 10px;
+    /* Increased from 5px */
     padding: 0 !important;
     margin-left: 45px !important;
 }
 
 .menu-item {
     display: block !important;
-    margin: 4px 0 !important;
+    margin: 8px 0 !important;
+    /* Increased from 4px */
 }
 
 .menu-item a {
