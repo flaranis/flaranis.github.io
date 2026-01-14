@@ -262,7 +262,7 @@
 <p>开场后队友把D秒了，我跑去看G，忽略了一个性质导致把转化成了求一大堆生成函数的乘积，跑去找队友要NTT板子结果恰好没带；这时候发现榜上G已经有队伍过了，冷静了一下发现直接简单DP就可以，也轻松通过。<br>
 队友J会了但实现的时候出了点问题，于是我抢了机子开始写F，过完样例喜提第一发罚时，冷静了下发现题目里的罚时忘记考虑了（草），因为手生导致F写了挺长时间，这时候的排名已经不太乐观了，好在队友想清楚之后J也很快过了。<br>
 这时候队友说H可能DP一下就行，分析了下发现转移方程一定是某一段连续区间，前缀和优化下就可以了，写完获得第二发罚时，发现是边界出了问题，判掉之后过了。<br>
-后面打的很粗糙，BC都是有点思路但没时间想的题，A和I队友在想，K有个哈希做法但太久没写代码哈希写的很慢，总之还是先去写哈希了，中间哈希浪费了很多时间，好在是交上去没什么问题。然后A有个$2^{20} \log n$的粗糙做法，要去vector里写二分再维护奇怪的前缀和，勉勉强强写完之后又寄了，看了好久都没看出来问题，最后感觉可能是最小值可能小于$-10^{18}$，手动处理了下结果过了，这里又浪费半小时多。<br>
+后面打的很粗糙，BC都是有点思路但没时间想的题，A和I队友在想，K有个哈希做法但太久没写代码哈希写的很慢，总之还是先去写哈希了，中间哈希浪费了很多时间，好在是交上去没什么问题。然后A有个<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mn>20</mn></msup><mi>log</mi><mo>⁡</mo><mi>n</mi></mrow><annotation encoding="application/x-tex">2^{20} \log n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.008548em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span><span class="mord mtight">0</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal">n</span></span></span></span>的粗糙做法，要去vector里写二分再维护奇怪的前缀和，勉勉强强写完之后又寄了，看了好久都没看出来问题，最后感觉可能是最小值可能小于<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><mn>1</mn><msup><mn>0</mn><mn>18</mn></msup></mrow><annotation encoding="application/x-tex">-10^{18}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.897438em;vertical-align:-0.08333em;"></span><span class="mord">−</span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mord mtight">8</span></span></span></span></span></span></span></span></span></span></span></span>，手动处理了下结果过了，这里又浪费半小时多。<br>
 这时候已经没什么时间了，BC看榜C过的比B多一些，分析C分析出单点修改以及能合并的区间信息，套个魔改线段树应该就行了，但只剩于是摆烂了。赛后看了题解发现B如果想到是来得及写出来的，又一次决策错误，好在不是正式区域赛。</p>
 <img src="/JSCPC2025/7b6e64a99baa6dbaa16ab3d3a239bf6.jpg" class="" title="hmmm">
 <p>颁奖有点不太想听，跑出去买奶茶结果下雨了。<br>
@@ -446,58 +446,28 @@
 
   
       
-
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="//cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
 <script>
-  if (typeof MathJax === 'undefined') {
-    window.MathJax = {
-      loader: {
-        source: {
-          '[tex]/amsCd': '[tex]/amscd',
-          '[tex]/AMScd': '[tex]/amscd'
-        }
-      },
-      tex: {
-        inlineMath: {'[+]': [['$', '$']]},
-        tags: 'ams'
-      },
-      options: {
-        renderActions: {
-          findScript: [10, doc => {
-            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
-              const display = !!node.type.match(/; *mode=display/);
-              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
-              const text = document.createTextNode('');
-              node.parentNode.replaceChild(text, node);
-              math.start = {node: text, delim: '', n: 0};
-              math.end = {node: text, delim: '', n: 0};
-              doc.math.push(math);
-            });
-          }, '', false],
-          insertedScript: [200, () => {
-            document.querySelectorAll('mjx-container').forEach(node => {
-              let target = node.parentNode;
-              if (target.nodeName.toLowerCase() === 'li') {
-                target.parentNode.classList.add('has-jax');
-              }
-            });
-          }, '', false]
-        }
-      }
-    };
-    (function () {
-      var script = document.createElement('script');
-      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
-      script.defer = true;
-      document.head.appendChild(script);
-    })();
-  } else {
-    MathJax.startup.document.state(0);
-    MathJax.texReset();
-    MathJax.typeset();
-  }
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      // customised options
+      // • auto-render specific keys, like `globalGroup`
+      delimiters: [
+          {left: '$', right: '$', display: true},
+          {left: '
+, right: '
+, display: false},
+          {left: '\(', right: '\)', display: false},
+          {left: '\[', right: '\]', display: true}
+      ],
+      // • rendering options:
+      throwOnError : false
+    });
+  });
 </script>
 
-    
 
   
 <script src="/js/snow.js"></script>

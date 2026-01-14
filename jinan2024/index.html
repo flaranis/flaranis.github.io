@@ -267,17 +267,17 @@
 过完C发现K是真的（后来看了下直接写K也没一血），于是队友写完K开始集火A，找到了bug直接交，喜提第二个WA。<br>
 仔细盯了下发现是溢出了，判了下爆longlong的情况就过了。<br>
 这时候是rank2，仅次于冠军（每日份辉煌时刻）<br>
-这时候我发现H好像不太好写，队友在集火D和J，看了眼榜前排过了几个M，仔细想了想发现不是计算几何，拆开好像能当区间DP做，但复杂度是$O(n^4)$的。队友写完D之后把J写了，同时我也把M优化到$n^3$,就直接上手去写M了。花了半个小时喜提第三个WA，开始焦躁。<br>
+这时候我发现H好像不太好写，队友在集火D和J，看了眼榜前排过了几个M，仔细想了想发现不是计算几何，拆开好像能当区间DP做，但复杂度是<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><msup><mi>n</mi><mn>4</mn></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n^4)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">4</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>的。队友写完D之后把J写了，同时我也把M优化到<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>n</mi><mn>3</mn></msup></mrow><annotation encoding="application/x-tex">n^3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord mathnormal">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span></span></span></span>,就直接上手去写M了。花了半个小时喜提第三个WA，开始焦躁。<br>
 发现M的bug，修了，WA<br>
 发现M的bug，修了，再WA<br>
 发现M的bug，修了，又WA<br>
 Debug半小时后发现还有初始线段的预处理问题，修完之后终于过了。<br>
 于是从7题第一升到了8题第一，排名没变还是rank2。<br>
 这时候有H和E两题，E是数据结构，H队友看了说能做，于是队友开始写H，我继续分析E。<br>
-过了20min，队友H说很难写，我发现E有个清真好写的$O(n^{1.5})$做法,把队友赶下去花20min写完了。写完之后喜提TLE，卡了几波常还是TLE（这时候本机7s），于是让队友先写H。<br>
+过了20min，队友H说很难写，我发现E有个清真好写的<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><msup><mi>n</mi><mn>1.5</mn></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n^{1.5})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mord mtight">.</span><span class="mord mtight">5</span></span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>做法,把队友赶下去花20min写完了。写完之后喜提TLE，卡了几波常还是TLE（这时候本机7s），于是让队友先写H。<br>
 队友写完H又wa了，这时候排名开始狂掉。把H打印下来我开始卡E的常，写了maker开始调块大小，从300到1600每个值几乎都试了一遍，全是TLE。这时候才意识到分块可能不是正解，不过心态爆炸没时间回想正解了。队友在造数据hack自己的H，造一个修一个交一次wa一次，大家心态都很炸。<br>
 于是后2h一题都没过（<br>
-结束之后冷静think了一下，发现H是简单二分图匹配。贪心本来就是错的。E有线段树的$O(n \log n)$写法，也很好写，心态问题太大了。</p>
+结束之后冷静think了一下，发现H是简单二分图匹配。贪心本来就是错的。E有线段树的<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mi>log</mi><mo>⁡</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n \log n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span>写法，也很好写，心态问题太大了。</p>
 <hr>
 <p>晚上的火车没赶上颁奖典礼，遗憾。<br>
 偷一张群友拍的图作为收尾吧：<br>
@@ -455,58 +455,28 @@ Debug半小时后发现还有初始线段的预处理问题，修完之后终于
 
   
       
-
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="//cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
 <script>
-  if (typeof MathJax === 'undefined') {
-    window.MathJax = {
-      loader: {
-        source: {
-          '[tex]/amsCd': '[tex]/amscd',
-          '[tex]/AMScd': '[tex]/amscd'
-        }
-      },
-      tex: {
-        inlineMath: {'[+]': [['$', '$']]},
-        tags: 'ams'
-      },
-      options: {
-        renderActions: {
-          findScript: [10, doc => {
-            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
-              const display = !!node.type.match(/; *mode=display/);
-              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
-              const text = document.createTextNode('');
-              node.parentNode.replaceChild(text, node);
-              math.start = {node: text, delim: '', n: 0};
-              math.end = {node: text, delim: '', n: 0};
-              doc.math.push(math);
-            });
-          }, '', false],
-          insertedScript: [200, () => {
-            document.querySelectorAll('mjx-container').forEach(node => {
-              let target = node.parentNode;
-              if (target.nodeName.toLowerCase() === 'li') {
-                target.parentNode.classList.add('has-jax');
-              }
-            });
-          }, '', false]
-        }
-      }
-    };
-    (function () {
-      var script = document.createElement('script');
-      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
-      script.defer = true;
-      document.head.appendChild(script);
-    })();
-  } else {
-    MathJax.startup.document.state(0);
-    MathJax.texReset();
-    MathJax.typeset();
-  }
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      // customised options
+      // • auto-render specific keys, like `globalGroup`
+      delimiters: [
+          {left: '$', right: '$', display: true},
+          {left: '
+, right: '
+, display: false},
+          {left: '\(', right: '\)', display: false},
+          {left: '\[', right: '\]', display: true}
+      ],
+      // • rendering options:
+      throwOnError : false
+    });
+  });
 </script>
 
-    
 
   
 <script src="/js/snow.js"></script>
