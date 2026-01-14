@@ -179,6 +179,89 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://flaranis.github.io/thoughts0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Flaranis">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/thoughts0/" class="post-title-link" itemprop="url">thoughts0</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2026-01-14 20:38:33 / 修改时间：21:10:45" itemprop="dateCreated datePublished" datetime="2026-01-14T20:38:33+08:00">2026-01-14</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="拉格朗日恒等式：">拉格朗日恒等式：</h3>
+<p>计算两个向量夹平行四边形的面积<br>
+$$<br>
+| \mathbf{a} |^2 | \mathbf{b} |^2 - (\mathbf{a} \cdot \mathbf{b})^2 = \sum_{1 \le i &lt; j \le n} (a_i b_j - a_j b_i)^2 \<br>
+\quad \text{where} \quad (\mathbf{a} \cdot \mathbf{b})^2 = | \mathbf{a} |^2 | \mathbf{b} |^2 \cos^2 \theta<br>
+$$<br>
+即对于任意维度的两个向量$\mathbf{a}$和$\mathbf{b}$，可以通过$\sqrt{| \mathbf{a} |^2 | \mathbf{b} |^2 - (\mathbf{a} \cdot \mathbf{b})^2}$计算出两个向量夹平行四边形的面积，在面积分求面积微元时很好用。</p>
+<h3 id="Extra">Extra</h3>
+<p>在$n$维空间里，通过$m$个参数可以唯一确定一个$m$维流形（e.g.  $n=3,m=2$时，我们通过两个参数$u,v$在三维空间($x(u,v),y(u,v),z(u,v)$)中唯一确定一个二维流形，即曲面）。</p>
+<p>这一$m$维流形的<strong>超体积微元</strong>的平方等于：所有$\binom{n}{m}$种在$n$个维度中任选$m$个维度，将<strong>微元</strong>投影到这些维度上的超体积的平方和。具体地，设微分矩阵 $\mathbf{J}$（其中 $\mathbf{J}_{i,j}=\frac{\partial x_i}{\partial u_j}$），则超体积微元$\mathrm{d}S=\sqrt{K}\mathrm{d}u_1\mathrm{d}u_2\cdots\mathrm{d}u_m$，其中$K$是$\mathbf{J}$中所有$m\times m$子矩阵的行列式的平方和。</p>
+<p>例如，在$n=3,m=2$时，$\mathbf{J}=\begin{pmatrix}<br>
+\frac{\partial x}{\partial u} &amp; \frac{\partial x}{\partial v} \<br>
+\frac{\partial y}{\partial u} &amp; \frac{\partial y}{\partial v} \<br>
+\frac{\partial z}{\partial u} &amp; \frac{\partial z}{\partial v}<br>
+\end{pmatrix}$，则$K=\begin{vmatrix}<br>
+\frac{\partial x}{\partial u} &amp; \frac{\partial x}{\partial v} \<br>
+\frac{\partial y}{\partial u} &amp; \frac{\partial y}{\partial v}<br>
+\end{vmatrix}^2+\begin{vmatrix}<br>
+\frac{\partial x}{\partial u} &amp; \frac{\partial x}{\partial v} \<br>
+\frac{\partial z}{\partial u} &amp; \frac{\partial z}{\partial v}<br>
+\end{vmatrix}^2+\begin{vmatrix}<br>
+\frac{\partial y}{\partial u} &amp; \frac{\partial y}{\partial v} \<br>
+\frac{\partial z}{\partial u} &amp; \frac{\partial z}{\partial v}<br>
+\end{vmatrix}^2$</p>
+<p>拉格朗日恒等式的面积项$\sum\limits_{1 \le i &lt; j \le n} (a_i b_j - a_j b_i)^2$等同于在$m=2$时累加所有子行列式的平方和。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://flaranis.github.io/some/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -849,80 +932,11 @@ $$<br>
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://flaranis.github.io/aboutme/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="Flaranis">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/aboutme/" class="post-title-link" itemprop="url">About me</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2024-05-30 21:27:34" itemprop="dateCreated datePublished" datetime="2024-05-30T21:27:34+08:00">2024-05-30</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2025-06-09 23:43:14" itemprop="dateModified" datetime="2025-06-09T23:43:14+08:00">2025-06-09</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>“我纵茕茕孑立，难避漫漫长夜。然长夜终尽，天将启明，惟以平亘之孤星，何胜东方之既白。”</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/aboutme/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
 
 
 
